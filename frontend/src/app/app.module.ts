@@ -11,10 +11,12 @@ import { HelpSomeoneComponent } from './components/help-someone/help-someone.com
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { WorkspaceService } from './services/workspace.service';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './components/home/home.component';
+import { RouterComponent } from './components/router/router.component';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { TrackProgressComponent } from './track-progress/track-progress.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     WorkspaceComponent,
     HelpSomeoneComponent,
     SidebarComponent,
+    RouterComponent,
+    TrackProgressComponent,
     HomeComponent
   ],
   imports: [

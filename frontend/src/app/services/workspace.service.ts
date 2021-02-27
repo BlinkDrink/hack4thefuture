@@ -12,4 +12,8 @@ export class WorkspaceService {
   getAll() {
     return this.http.get(`${Configuration.API_ENDPOINT}/workspaces`);
   }
+
+  getById(id: string) {
+    return this.http.get(`${Configuration.API_ENDPOINT}/workspaces/${id}`);
+  }
 }

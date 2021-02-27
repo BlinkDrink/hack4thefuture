@@ -1,0 +1,13 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <a class="home" [routerLink]="['/']"><h5>Hack for the Future</h5></a>
+  </nb-layout-header>
+
+  <nb-sidebar>
+    <app-sidebar [workspaces]="workspaces"></app-sidebar>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>

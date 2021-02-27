@@ -11,8 +11,8 @@ import { HelpSomeoneComponent } from './components/help-someone/help-someone.com
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { WorkspaceService } from './services/workspace.service';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './home/home.component';
-import { InMemoryDataService } from './in-memory-data.service';
+import { HomeComponent } from './components/home/home.component';
+import { InMemoryDataService } from './services/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -29,7 +29,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 5500 }),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 0 }),
     NgxSpinnerModule,
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,

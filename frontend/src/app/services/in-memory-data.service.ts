@@ -12,19 +12,11 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb(reqInfo?: RequestInfo): {} | Observable<{}> | Promise<{}> {
     const workspaces = [
       {
-        title: 'Test',
-        link: '/test',
-        badge: {
-          text: '26',
-          status: 'primary',
-        }
+        id: 'e6294653-5bef-4d47-8b48-c6750f5e8be5',
+        name: 'OOP'
       }, {
-        title: 'Test2',
-        link: '/test2',
-        badge: {
-          text: '4',
-          status: 'primary',
-        },
+        id: 'a558b348-db33-4d77-be5d-e38dd49fe295',
+        name: 'Chinese'
       }
     ];
 

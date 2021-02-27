@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HelpSomeoneComponent } from './components/help-someone/help-someone.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { WorkspaceResolverService } from './resolvers/workspace-resolver.service';
 
 const routes: Routes = [

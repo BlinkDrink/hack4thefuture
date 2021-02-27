@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule, NbIconModule, NbMenuModule, NbButtonGroupModule, NbListModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule, NbIconModule, NbMenuModule, NbButtonGroupModule, NbListModule, NbActionsModule, NbCardModule, NbSearchModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { WorkspaceComponent } from './components/workspace/workspace.component';
 import { HelpSomeoneComponent } from './components/help-someone/help-someone.component';
@@ -45,7 +45,10 @@ import { HomeComponent } from './components/home/home.component';
     NbIconModule,
     NbMenuModule.forRoot(),
     NbButtonGroupModule,
-    NbListModule
+    NbListModule,
+    NbActionsModule,
+    NbCardModule,
+    NbSearchModule
   ],
   providers: [
     InMemoryDataService,

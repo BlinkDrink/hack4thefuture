@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, Params, Router } from '@angular/router';
+import { NbIconConfig } from '@nebular/theme';
 import { Subscription } from 'rxjs';
 import { Workspace } from 'src/app/models/workspace';
-import { WorkspaceListResolverService } from 'src/app/resolvers/workspace-list-resolver.service';
 
 @Component({
   selector: 'app-workspace',
@@ -17,6 +17,8 @@ export class WorkspaceComponent implements OnDestroy {
   private workspaceId$: Subscription;
   private workspaces: Workspace[] = [];
   private workspaces$: Subscription;
+
+  disabledIconConfig: NbIconConfig = { icon: 'settings-2-outline', pack: 'eva' };
 
   constructor(private route: ActivatedRoute) {
     this.workspaces$ = this.route.data.subscribe((data: Params) => {

@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   constructor(private route: ActivatedRoute, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
-    this.workspaces = this.route.snapshot.data['workspaces'];
+    this.workspaces = this.route.snapshot.data.workspaces;
     this.spinner.hide();
   }
 

@@ -6,6 +6,8 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
+from swagger_server.models.user import User
+from swagger_server.models.material import Material
 from swagger_server import util
 
 
@@ -15,7 +17,7 @@ class Workspace(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, uuid: str=None, name: str=None, admin: User=None, students: List[User]=None, materials: List[Material]=None):  # noqa: E501
+    def __init__(self, uuid: str = None, name: str = None, admin: User = None, students: List[User] = None, materials: List[Material] = None):  # noqa: E501
         """Workspace - a model defined in Swagger
 
         :param uuid: The uuid of this Workspace.  # noqa: E501

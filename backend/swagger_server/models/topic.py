@@ -15,7 +15,7 @@ class Topic(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, uuid: str=None, name: str=None):  # noqa: E501
+    def __init__(self, uuid: str = None, name: str = None):  # noqa: E501
         """Topic - a model defined in Swagger
 
         :param uuid: The uuid of this Topic.  # noqa: E501

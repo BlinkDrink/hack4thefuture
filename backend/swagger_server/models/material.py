@@ -6,6 +6,9 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
+from swagger_server.models.question import Question
+from swagger_server.models.task import Task
+from swagger_server.models.topic import Topic
 from swagger_server import util
 
 
@@ -15,7 +18,7 @@ class Material(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, uuid: str=None, name: str=None, link: str=None, questions: List[Question]=None, tasks: List[Task]=None, topics: List[Topic]=None):  # noqa: E501
+    def __init__(self, uuid: str = None, name: str = None, link: str = None, questions: List[Question] = None, tasks: List[Task] = None, topics: List[Topic] = None):  # noqa: E501
         """Material - a model defined in Swagger
 
         :param uuid: The uuid of this Material.  # noqa: E501

@@ -15,7 +15,7 @@ class Answer(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, is_correct: bool=None, text: str=None, explanation: str=None):  # noqa: E501
+    def __init__(self, is_correct: bool = None, text: str = None, explanation: str = None):  # noqa: E501
         """Answer - a model defined in Swagger
 
         :param is_correct: The is_correct of this Answer.  # noqa: E501

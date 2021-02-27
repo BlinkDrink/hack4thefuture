@@ -13,7 +13,7 @@ export class WorkspaceComponent implements OnDestroy {
 
   workspace: Workspace | undefined;
 
-  private workspaceId: string = '';
+  private workspaceId = '';
   private workspaceId$: Subscription;
   private workspaces: Workspace[] = [];
   private workspaces$: Subscription;
@@ -22,11 +22,11 @@ export class WorkspaceComponent implements OnDestroy {
 
   constructor(private route: ActivatedRoute) {
     this.workspaces$ = this.route.data.subscribe((data: Params) => {
-      this.workspaces = data['workspaces'];
+      this.workspaces = data.workspaces;
     });
 
     this.workspaceId$ = this.route.params.subscribe((params: Params) => {
-      this.workspaceId = params['id'];
+      this.workspaceId = params.id;
       this.workspace = this.workspaces.find(w => w.id === this.workspaceId);
     });
   }

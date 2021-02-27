@@ -19,7 +19,7 @@ class TestTasksController(BaseTestCase):
         Get all tasks for a topic
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}/tasks'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}/tasks'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -29,9 +29,11 @@ class TestTasksController(BaseTestCase):
 
         Create new task for the specified topic
         """
+        task = None
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}/tasks'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}/tasks'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
             method='POST',
+            data=json.dumps(task),
             content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -42,7 +44,7 @@ class TestTasksController(BaseTestCase):
         Return specified task
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}/tasks/{taskId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', taskId='taskId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}/tasks/{taskId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', taskId='taskId_example'),
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -53,7 +55,7 @@ class TestTasksController(BaseTestCase):
         Update task specified by id, return task
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}/tasks/{taskId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', taskId='taskId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}/tasks/{taskId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', taskId='taskId_example'),
             method='PUT',
             content_type='application/json')
         self.assert200(response,
@@ -64,9 +66,11 @@ class TestTasksController(BaseTestCase):
 
         Submit the completed task
         """
+        task = None
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}/tasks/{taskId}/submit'.format(workspaceId='workspaceId_example', topicId='topicId_example', taskId='taskId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}/tasks/{taskId}/submit'.format(workspaceId='workspaceId_example', topicId='topicId_example', taskId='taskId_example'),
             method='POST',
+            data=json.dumps(task),
             content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))

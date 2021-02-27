@@ -21,7 +21,7 @@ def workspaces_workspace_id_topics_topic_id_tasks_get(workspaceId, topicId):  # 
     return 'do some magic!'
 
 
-def workspaces_workspace_id_topics_topic_id_tasks_post(workspaceId, topicId):  # noqa: E501
+def workspaces_workspace_id_topics_topic_id_tasks_post(workspaceId, topicId, task=None):  # noqa: E501
     """Create new task for the specified topic
 
      # noqa: E501
@@ -30,6 +30,8 @@ def workspaces_workspace_id_topics_topic_id_tasks_post(workspaceId, topicId):  #
     :type workspaceId: str
     :param topicId: ID of topic
     :type topicId: str
+    :param task: 
+    :type task: 
 
     :rtype: Task
     """
@@ -70,7 +72,7 @@ def workspaces_workspace_id_topics_topic_id_tasks_task_id_put(workspaceId, topic
     return 'do some magic!'
 
 
-def workspaces_workspace_id_topics_topic_id_tasks_task_id_submit_post(workspaceId, topicId, taskId):  # noqa: E501
+def workspaces_workspace_id_topics_topic_id_tasks_task_id_submit_post(workspaceId, topicId, taskId, task=None):  # noqa: E501
     """Submit the completed task
 
      # noqa: E501
@@ -81,6 +83,8 @@ def workspaces_workspace_id_topics_topic_id_tasks_task_id_submit_post(workspaceI
     :type topicId: str
     :param taskId: ID of task
     :type taskId: str
+    :param task: 
+    :type task: 
 
     :rtype: List[bool]
     """

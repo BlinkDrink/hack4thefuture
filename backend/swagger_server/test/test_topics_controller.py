@@ -18,7 +18,7 @@ class TestTopicsController(BaseTestCase):
         Return specified topic
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -29,9 +29,9 @@ class TestTopicsController(BaseTestCase):
         Update topic specified by id, return topic
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
             method='PUT',
-            content_type='text')
+            content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 

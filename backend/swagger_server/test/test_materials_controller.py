@@ -18,7 +18,7 @@ class TestMaterialsController(BaseTestCase):
         Get all materials for a topic
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}/materials'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}/materials'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -29,7 +29,7 @@ class TestMaterialsController(BaseTestCase):
         Delete specified topic
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}/materials/{materialId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', materialId='materialId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}/materials/{materialId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', materialId='materialId_example'),
             method='DELETE')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -40,7 +40,7 @@ class TestMaterialsController(BaseTestCase):
         Return specified material
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}/materials/{materialId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', materialId='materialId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}/materials/{materialId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', materialId='materialId_example'),
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -51,7 +51,7 @@ class TestMaterialsController(BaseTestCase):
         Update material specified by id, return material
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}/materials/{materialId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', materialId='materialId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}/materials/{materialId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', materialId='materialId_example'),
             method='PUT',
             content_type='application/json')
         self.assert200(response,
@@ -62,9 +62,11 @@ class TestMaterialsController(BaseTestCase):
 
         Create new material for the specified topic
         """
+        material = Material()
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}/materials'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}/materials'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
             method='POST',
+            data=json.dumps(material),
             content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -75,7 +77,7 @@ class TestMaterialsController(BaseTestCase):
         Delete specified task
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}/tasks/{taskId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', taskId='taskId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}/tasks/{taskId}'.format(workspaceId='workspaceId_example', topicId='topicId_example', taskId='taskId_example'),
             method='DELETE')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))

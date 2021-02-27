@@ -26,7 +26,7 @@ export class SidebarComponent implements OnInit {
           title: workspace.name,
           link: `/workspaces/${workspace.id}`,
           badge: {
-            text: 'x',
+            text: workspace.topics.length.toString(),
             status: 'primary'
           }
         })) : undefined,

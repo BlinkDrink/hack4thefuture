@@ -8,7 +8,7 @@ info:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 host: "127.0.0.1"
-basePath: "/api/"
+basePath: "/api"
 tags:
 - name: "workspaces"
   description: "Everything about your workspaces"
@@ -57,11 +57,14 @@ paths:
       - "workspaces"
       summary: "Create new workspace, accepts workspace name"
       operationId: "workspaces_post"
-      consumes:
-      - "text"
       produces:
       - "application/json"
-      parameters: []
+      parameters:
+      - in: "body"
+        name: "workspace"
+        required: false
+        schema:
+          $ref: "#/definitions/Workspace"
       responses:
         "200":
           description: "OK"
@@ -161,8 +164,6 @@ paths:
       - "workspaces"
       summary: "Create new topic, returns the topic"
       operationId: "workspaces_workspace_id_topics_post"
-      consumes:
-      - "text"
       produces:
       - "application/json"
       parameters:
@@ -171,6 +172,11 @@ paths:
         description: "ID of workspace"
         required: true
         type: "string"
+      - in: "body"
+        name: "topic"
+        required: false
+        schema:
+          $ref: "#/definitions/Topic"
       responses:
         "200":
           description: "OK"
@@ -212,7 +218,7 @@ paths:
       summary: "Update topic specified by id, return topic"
       operationId: "workspaces_workspace_id_topics_topic_id_put"
       consumes:
-      - "text"
+      - "application/json"
       produces:
       - "application/json"
       parameters:
@@ -290,8 +296,6 @@ paths:
       - "materials"
       summary: "Create new material for the specified topic"
       operationId: "workspaces_workspace_id_topics_topic_id_materials_post"
-      consumes:
-      - "application/json"
       produces:
       - "application/json"
       parameters:
@@ -305,6 +309,11 @@ paths:
         description: "ID of topic"
         required: true
         type: "string"
+      - in: "body"
+        name: "material"
+        required: false
+        schema:
+          $ref: "#/definitions/Material"
       responses:
         "200":
           description: "OK"
@@ -439,8 +448,6 @@ paths:
       - "tasks"
       summary: "Create new task for the specified topic"
       operationId: "workspaces_workspace_id_topics_topic_id_tasks_post"
-      consumes:
-      - "application/json"
       produces:
       - "application/json"
       parameters:
@@ -454,6 +461,11 @@ paths:
         description: "ID of topic"
         required: true
         type: "string"
+      - in: "body"
+        name: "task"
+        required: false
+        schema:
+          type: "object"
       responses:
         "200":
           description: "OK"
@@ -560,8 +572,6 @@ paths:
       - "tasks"
       summary: "Submit the completed task"
       operationId: "workspaces_workspace_id_topics_topic_id_tasks_task_id_submit_post"
-      consumes:
-      - "application/json"
       produces:
       - "application/json"
       parameters:
@@ -580,6 +590,11 @@ paths:
         description: "ID of task"
         required: true
         type: "string"
+      - in: "body"
+        name: "task"
+        required: false
+        schema:
+          type: "object"
       responses:
         "200":
           description: "OK"

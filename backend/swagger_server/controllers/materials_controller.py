@@ -71,7 +71,7 @@ def workspaces_workspace_id_topics_topic_id_materials_material_id_put(workspaceI
     return 'do some magic!'
 
 
-def workspaces_workspace_id_topics_topic_id_materials_post(workspaceId, topicId):  # noqa: E501
+def workspaces_workspace_id_topics_topic_id_materials_post(workspaceId, topicId, material=None):  # noqa: E501
     """Create new material for the specified topic
 
      # noqa: E501
@@ -80,9 +80,13 @@ def workspaces_workspace_id_topics_topic_id_materials_post(workspaceId, topicId)
     :type workspaceId: str
     :param topicId: ID of topic
     :type topicId: str
+    :param material: 
+    :type material: dict | bytes
 
     :rtype: Material
     """
+    if connexion.request.is_json:
+        material = Material.from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
 
 

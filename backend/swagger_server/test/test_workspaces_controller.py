@@ -19,7 +19,7 @@ class TestWorkspacesController(BaseTestCase):
         Lists all workspaces
         """
         response = self.client.open(
-            '/api//workspaces',
+            '/api/workspaces',
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -29,10 +29,12 @@ class TestWorkspacesController(BaseTestCase):
 
         Create new workspace, accepts workspace name
         """
+        workspace = Workspace()
         response = self.client.open(
-            '/api//workspaces',
+            '/api/workspaces',
             method='POST',
-            content_type='text')
+            data=json.dumps(workspace),
+            content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
@@ -42,7 +44,7 @@ class TestWorkspacesController(BaseTestCase):
         Delete specified workspace by its UUID
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}'.format(workspaceId='workspaceId_example'),
+            '/api/workspaces/{workspaceId}'.format(workspaceId='workspaceId_example'),
             method='DELETE')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -53,7 +55,7 @@ class TestWorkspacesController(BaseTestCase):
         Get specified workspace by its UUID
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}'.format(workspaceId='workspaceId_example'),
+            '/api/workspaces/{workspaceId}'.format(workspaceId='workspaceId_example'),
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -64,7 +66,7 @@ class TestWorkspacesController(BaseTestCase):
         Update specified workspace by its UUID
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}'.format(workspaceId='workspaceId_example'),
+            '/api/workspaces/{workspaceId}'.format(workspaceId='workspaceId_example'),
             method='PUT',
             content_type='application/json')
         self.assert200(response,
@@ -76,7 +78,7 @@ class TestWorkspacesController(BaseTestCase):
         Get all topics of the workspace specified by UUID
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics'.format(workspaceId='workspaceId_example'),
+            '/api/workspaces/{workspaceId}/topics'.format(workspaceId='workspaceId_example'),
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -86,10 +88,12 @@ class TestWorkspacesController(BaseTestCase):
 
         Create new topic, returns the topic
         """
+        topic = Topic()
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics'.format(workspaceId='workspaceId_example'),
+            '/api/workspaces/{workspaceId}/topics'.format(workspaceId='workspaceId_example'),
             method='POST',
-            content_type='text')
+            data=json.dumps(topic),
+            content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
@@ -99,7 +103,7 @@ class TestWorkspacesController(BaseTestCase):
         Delete specified topic
         """
         response = self.client.open(
-            '/api//workspaces/{workspaceId}/topics/{topicId}'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
+            '/api/workspaces/{workspaceId}/topics/{topicId}'.format(workspaceId='workspaceId_example', topicId='topicId_example'),
             method='DELETE')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))

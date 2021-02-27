@@ -16,7 +16,7 @@ class Question(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, uuid: str = None, question_text: str = None, answers: List[Answer] = None):  # noqa: E501
+    def __init__(self, uuid: str=None, question_text: str=None, answers: List[Answer]=None):  # noqa: E501
         """Question - a model defined in Swagger
 
         :param uuid: The uuid of this Question.  # noqa: E501

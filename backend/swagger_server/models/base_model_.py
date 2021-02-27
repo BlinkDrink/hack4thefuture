@@ -4,11 +4,12 @@ import six
 import typing
 
 from swagger_server import util
+from mongoengine import *
 
 T = typing.TypeVar('T')
 
 
-class Model(object):
+class Model(Document):
     # swaggerTypes: The key is attribute name and the
     # value is attribute type.
     swagger_types = {}
@@ -16,6 +17,7 @@ class Model(object):
     # attributeMap: The key is attribute name and the
     # value is json key in definition.
     attribute_map = {}
+    meta = {'allow_inheritance': True}
 
     @classmethod
     def from_dict(cls: typing.Type[T], dikt) -> T:

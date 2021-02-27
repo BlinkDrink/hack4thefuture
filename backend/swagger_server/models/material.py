@@ -18,7 +18,7 @@ class Material(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, uuid: str = None, name: str = None, link: str = None, questions: List[Question] = None, tasks: List[Task] = None, topics: List[Topic] = None):  # noqa: E501
+    def __init__(self, uuid: str=None, name: str=None, link: str=None, questions: List[Question]=None, tasks: List[Task]=None, topics: List[Topic]=None):  # noqa: E501
         """Material - a model defined in Swagger
 
         :param uuid: The uuid of this Material.  # noqa: E501

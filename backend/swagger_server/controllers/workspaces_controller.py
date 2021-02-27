@@ -17,14 +17,18 @@ def workspaces_get():  # noqa: E501
     return 'do some magic!'
 
 
-def workspaces_post():  # noqa: E501
+def workspaces_post(workspace=None):  # noqa: E501
     """Create new workspace, accepts workspace name
 
      # noqa: E501
 
+    :param workspace: 
+    :type workspace: dict | bytes
 
     :rtype: Workspace
     """
+    if connexion.request.is_json:
+        workspace = Workspace.from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
 
 
@@ -80,16 +84,20 @@ def workspaces_workspace_id_topics_get(workspaceId):  # noqa: E501
     return 'do some magic!'
 
 
-def workspaces_workspace_id_topics_post(workspaceId):  # noqa: E501
+def workspaces_workspace_id_topics_post(workspaceId, topic=None):  # noqa: E501
     """Create new topic, returns the topic
 
      # noqa: E501
 
     :param workspaceId: ID of workspace
     :type workspaceId: str
+    :param topic: 
+    :type topic: dict | bytes
 
     :rtype: Topic
     """
+    if connexion.request.is_json:
+        topic = Topic.from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
 
 

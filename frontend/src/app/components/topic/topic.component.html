@@ -2,7 +2,15 @@
   <nb-card-body>
     <nb-actions size="small">
       <nb-action>
+        <a class="home" [routerLink]="['/workspaces', workspace?.id]">
+          <nb-icon icon="arrow-back-outline"></nb-icon>
+        </a>
+      </nb-action>
+      <nb-action>
         Workspace: {{ workspace?.name }}
+      </nb-action>
+      <nb-action>
+        Topic: {{ topic?.name }}
       </nb-action>
       <nb-action>
         <nb-search type="rotate-layout"></nb-search>

@@ -7,6 +7,7 @@ import { WorkspaceComponent } from './components/workspace/workspace.component';
 import { WorkspaceListResolverService } from './resolvers/workspace-list-resolver.service';
 import { TrackProgressComponent } from './track-progress/track-progress.component';
 import { MaterialDetailComponent } from './material-detail/material-detail.component';
+import { TopicComponent } from './components/topic/topic.component';
 
 const routes: Routes = [
   {
@@ -20,8 +21,13 @@ const routes: Routes = [
         resolve: { workspaces: WorkspaceListResolverService } // WorkspaceResolverService }
       },
       {
-        path: 'workspaces/:id',
+        path: 'workspaces/:workspaceId',
         component: WorkspaceComponent,
+        resolve: { workspaces: WorkspaceListResolverService } // WorkspaceResolverService }
+      },
+      {
+        path: 'workspaces/:workspaceId/topics/:topicId',
+        component: TopicComponent,
         resolve: { workspaces: WorkspaceListResolverService } // WorkspaceResolverService }
       },
       { path: 'track-progress', component: TrackProgressComponent },

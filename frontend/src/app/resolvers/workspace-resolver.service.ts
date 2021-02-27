@@ -10,6 +10,6 @@ export class WorkspaceResolverService implements Resolve<any> {
   constructor(private workspaceService: WorkspaceService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return this.workspaceService.getById(route.data['id']);
+    return this.workspaceService.getById(route.data.workspaceId);
   }
 }

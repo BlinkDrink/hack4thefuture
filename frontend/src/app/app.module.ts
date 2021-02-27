@@ -20,6 +20,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { TrackProgressComponent } from './track-progress/track-progress.component';
 import { HomeComponent } from './components/home/home.component';
 import { MaterialDetailComponent } from './material-detail/material-detail.component';
+import { TopicComponent } from './components/topic/topic.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MaterialDetailComponent } from './material-detail/material-detail.compo
     SidebarComponent,
     RouterComponent,
     TrackProgressComponent,
-    MaterialDetailComponent
+    MaterialDetailComponent,
+    TopicComponent
   ],
   imports: [
     BrowserModule,

@@ -79,12 +79,14 @@ export class InMemoryDataService implements InMemoryDbService {
                 score: 0
               }
             ],
+            tasks: [],
             score: 50
           },
           {
             id: 'b6ec13fb-3c6d-41e7-828c-f8e752154330',
             name: 'Virtual functions',
             materials: [],
+            tasks: [],
             score: 100
           }
         ]
@@ -120,6 +122,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 score: 0
               }
             ],
+            tasks: [],
             score: 0
           }
         ]

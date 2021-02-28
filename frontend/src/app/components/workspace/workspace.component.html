@@ -11,26 +11,27 @@
   </nb-card-body>
 </nb-card>
 
+<h5>Topics ({{ topics.length }}):</h5>
 <div class="container-fluid p-0">
   <div class="row">
     <div *ngFor="let topic of topics" class="col-sm-12 col-md-3">
       <nb-card *ngIf="topic.score < 25 || topic.score === 25" size="tiny" accent= "danger">
-        <nb-card-header>{{topic.name}}</nb-card-header>
+        <nb-card-header>{{ topic.name }}</nb-card-header>
         <nb-card-body>
-          <p>Materials Progress: 25/100</p>
-          <p class="mb-0 pb-0">Tasks Progress: 15/100</p>
+          <p>Materials Score: 25/100</p>
+          <p class="mb-0 pb-0">Tasks Score: 15/100</p>
         </nb-card-body>
         <nb-card-footer>
           <a [routerLink]="['/workspaces', workspace?.id, 'topics', topic.id]">
-            <button class="float-right" nbButton size="small" status="primary">Open</button>
-          </a>
+          <button class="float-right" nbButton size="small" status="primary">Open</button>
+        </a>
         </nb-card-footer>
       </nb-card>
       <nb-card *ngIf="topic.score > 25 && topic.score < 75" size="tiny" accent="warning">
-        <nb-card-header>{{topic.name}}</nb-card-header>
+        <nb-card-header>{{ topic.name }}</nb-card-header>
         <nb-card-body>
-          <p>Materials Progress: 25/100</p>
-          <p class="mb-0 pb-0">Tasks Progress: 15/100</p>
+          <p>Materials Score: 25/100</p>
+          <p class="mb-0 pb-0">Tasks Score: 15/100</p>
         </nb-card-body>
         <nb-card-footer>
           <a [routerLink]="['/workspaces', workspace?.id, 'topics', topic.id]">
@@ -39,10 +40,10 @@
         </nb-card-footer>
       </nb-card>
       <nb-card *ngIf="topic.score > 75 || topic.score === 75" size="tiny" accent="success">
-        <nb-card-header>{{topic.name}}</nb-card-header>
+        <nb-card-header>{{ topic.name }}</nb-card-header>
         <nb-card-body>
-          <p>Materials Progress: 25/100</p>
-          <p class="mb-0 pb-0">Tasks Progress: 15/100</p>
+          <p>Materials Score: 25/100</p>
+          <p class="mb-0 pb-0">Tasks Score: 15/100</p>
         </nb-card-body>
         <nb-card-footer>
           <a [routerLink]="['/workspaces', workspace?.id, 'topics', topic.id]">

@@ -23,73 +23,70 @@
   </nb-card-body>
 </nb-card>
 
-<h5>Materials:</h5>
+<h5>Materials ({{ topic?.materials?.length }}):</h5>
 <div class="container-fluid p-0">
   <div class="row">
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="danger">
-        <nb-card-header>Tiny card</nb-card-header>
+    <div *ngFor="let material of topic?.materials" class="col-sm-12 col-md-2">
+      <nb-card *ngIf="material.score < 25 || material.score === 25" size="tiny" accent= "danger">
+        <nb-card-header>{{ material.name }}</nb-card-header>
+        <nb-card-body>
+          <p class="mt-1 pt-3">Quiz Score: 25/100</p>
+        </nb-card-body>
+        <nb-card-footer>
+          <a href="{{material.link}}" target="_blank">
+            <button nbButton size="small" status="primary">Learn</button>
+          </a>
+          <a [routerLink]="['/workspaces', workspace?.id, 'topics']">
+            <button class="float-right" nbButton size="small" status="primary">Quiz</button>
+          </a>
+        </nb-card-footer>
       </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="warning">
-        <nb-card-header>Tiny card</nb-card-header>
+      <nb-card *ngIf="material.score > 25 && material.score < 75" size="tiny" accent="warning">
+        <nb-card-header>{{ material.name }}</nb-card-header>
+        <nb-card-body>
+          <p class="mt-1 pt-3">Quiz Score: 25/100</p>
+        </nb-card-body>
+        <nb-card-footer>
+          <a href="{{material.link}}" target="_blank">
+            <button nbButton size="small" status="primary">Learn</button>
+          </a>
+          <a [routerLink]="['/workspaces', workspace?.id, 'topics']">
+            <button class="float-right" nbButton size="small" status="primary">Quiz</button>
+          </a>
+        </nb-card-footer>
       </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="success">
-        <nb-card-header>Tiny card</nb-card-header>
-      </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="success">
-        <nb-card-header>Tiny card Tiny card Tiny card Tiny card Tiny card</nb-card-header>
-      </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="danger">
-        <nb-card-header>Tiny card</nb-card-header>
-      </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="warning">
-        <nb-card-header>Tiny card</nb-card-header>
-      </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="success">
-        <nb-card-header>Tiny card</nb-card-header>
-      </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="success">
-        <nb-card-header>Tiny card Tiny card Tiny card Tiny card Tiny card</nb-card-header>
+      <nb-card *ngIf="material.score > 75 || material.score === 75" size="tiny" accent="success">
+        <nb-card-header>{{ material.name }}</nb-card-header>
+        <nb-card-body>
+          <p class="mt-1 pt-3">Quiz Score: 25/100</p>
+        </nb-card-body>
+        <nb-card-footer>
+          <a href="{{material.link}}" target="_blank">
+            <button nbButton size="small" status="primary">Learn</button>
+          </a>
+          <a [routerLink]="['/workspaces', workspace?.id, 'topics']">
+            <button class="float-right" nbButton size="small" status="primary">Quiz</button>
+          </a>
+        </nb-card-footer>
       </nb-card>
     </div>
   </div>
 </div>
 
-<h5>Tasks:</h5>
+<h5>Tasks  ({{ topic?.tasks?.length }}):</h5>
 <div class="container-fluid p-0">
   <div class="row">
     <div class="col-sm-12 col-md-2">
       <nb-card size="tiny" accent="danger">
         <nb-card-header>Tiny card</nb-card-header>
-      </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="warning">
-        <nb-card-header>Tiny card</nb-card-header>
-      </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="success">
-        <nb-card-header>Tiny card</nb-card-header>
-      </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="success">
-        <nb-card-header>Tiny card Tiny card Tiny card Tiny card Tiny card</nb-card-header>
+        <nb-card-body>
+          <p class="mt-1 pt-3">Task Score: 25/100</p>
+        </nb-card-body>
+        <nb-card-footer>
+          <a [routerLink]="['/workspaces', workspace?.id, 'topics']">
+            <button class="float-right" nbButton size="small" status="primary">Solve</button>
+          </a>
+        </nb-card-footer>
       </nb-card>
     </div>
   </div>

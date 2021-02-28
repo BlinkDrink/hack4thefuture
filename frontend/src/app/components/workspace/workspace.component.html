@@ -32,7 +32,8 @@
         </nb-card-body>
         <nb-card-footer>
           <a [routerLink]="['/workspaces', workspace?.id, 'topics', topic.id]">
-            <button class="float-right" nbButton size="small" status="primary">Open</button>
+            <button class="float-right" nbButton size="small" status="primary">Open<nb-icon icon="arrow-forward-outline"></nb-icon></button>
+
           </a>
         </nb-card-footer>
       </ng-template>

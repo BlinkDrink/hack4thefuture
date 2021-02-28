@@ -43,10 +43,10 @@
         </nb-card-body>
         <nb-card-footer>
           <a href="{{ material.link }}" target="_blank">
-            <button nbButton size="small" status="primary">Learn</button>
+            <button nbButton size="small" status="primary">Learn<nb-icon icon="external-link-outline"></nb-icon></button>
           </a>
           <a [routerLink]="['/workspaces', workspace?.id, 'topics', topic?.id, 'materials', material.id]">
-            <button class="float-right" nbButton size="small" status="primary">Quiz</button>
+            <button class="float-right" nbButton size="small" status="primary">Quiz<nb-icon icon="list-outline"></nb-icon></button>
           </a>
         </nb-card-footer>
       </ng-template>
@@ -74,7 +74,7 @@
         </nb-card-body>
         <nb-card-footer>
           <a href="{{ task.link }}" target="_blank">
-            <button class="float-right" nbButton size="small" status="primary">Solve</button>
+            <button class="float-right" nbButton size="small" status="primary">Solve<nb-icon icon="edit-2-outline"></nb-icon></button>
           </a>
         </nb-card-footer>
       </ng-template>

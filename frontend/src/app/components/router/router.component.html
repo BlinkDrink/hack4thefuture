@@ -1,10 +1,12 @@
 <nb-layout>
 
   <nb-layout-header fixed>
-    <a class="home" [routerLink]="['/']"><h5><nb-icon class="mr-1" icon="star"></nb-icon>Hack for the Future<nb-icon class="ml-1" icon="star"></nb-icon></h5></a>
+    <a class="home pt-1" [routerLink]="['/']"><h6>Hack for the Future</h6></a>
+    <div class="control-status-example"><nb-icon class="ml-4 mt-n1" (click)="toggle()" icon="menu-2-outline"></nb-icon></div>
+    <nb-search class="d-inline-block d-sm-none ml-3 mt-n1" type="rotate-layout"></nb-search>
   </nb-layout-header>
 
-  <nb-sidebar>
+  <nb-sidebar responsive>
     <app-sidebar [workspaces]="workspaces"></app-sidebar>
   </nb-sidebar>
 

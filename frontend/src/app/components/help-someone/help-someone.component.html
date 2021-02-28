@@ -9,7 +9,7 @@
         </nb-card-body>
         <nb-card-footer>
           <button nbButton outline size="small" status="primary">{{ helpUser.user.name }} <nb-icon icon="person-outline"></nb-icon></button>
-          <button class="float-right" nbButton size="small" status="primary">Help<nb-icon icon="message-square-outline"></nb-icon></button>
+          <button class="float-right" nbButton size="small" status="primary" (click)="openChatDialog()">Help<nb-icon icon="message-square-outline"></nb-icon></button>
         </nb-card-footer>
       </nb-card>
     </div>

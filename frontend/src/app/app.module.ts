@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule,
          NbIconModule, NbMenuModule, NbButtonGroupModule,
-         NbListModule, NbActionsModule, NbCardModule, NbSearchModule, NbRadioModule, NbBadgeModule
+         NbListModule, NbActionsModule, NbCardModule, NbSearchModule, NbRadioModule, NbBadgeModule, NbDialogService, NbDialogModule, NbChatModule
        } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { WorkspaceComponent } from './components/workspace/workspace.component';
@@ -22,6 +22,7 @@ import { MaterialDetailComponent } from './material-detail/material-detail.compo
 import { TopicComponent } from './components/topic/topic.component';
 import { MaterialComponent } from './components/material/material.component';
 import { FormsModule } from '@angular/forms';
+import { ChatDialogComponent } from './components/chat-dialog/chat-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     TrackProgressComponent,
     MaterialDetailComponent,
     TopicComponent,
-    MaterialComponent
+    MaterialComponent,
+    ChatDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -58,9 +60,12 @@ import { FormsModule } from '@angular/forms';
     NbCardModule,
     NbSearchModule,
     NbRadioModule,
-    NbBadgeModule
+    NbBadgeModule,
+    NbDialogModule.forRoot(),
+    NbChatModule.forRoot()
   ],
   providers: [
+    NbDialogService,
     InMemoryDataService,
     WorkspaceService
   ],

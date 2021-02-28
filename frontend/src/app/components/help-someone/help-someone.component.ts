@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
+import { NbDialogService } from '@nebular/theme';
 import { Subscription } from 'rxjs';
 import { HelpUser } from 'src/app/models/helpuser';
 import { Topic } from 'src/app/models/topic';
 import { Workspace } from 'src/app/models/workspace';
+import { ChatDialogComponent } from '../chat-dialog/chat-dialog.component';
 
 @Component({
   selector: 'app-help-someone',
@@ -62,7 +64,7 @@ export class HelpSomeoneComponent implements OnInit {
     topic: Topic | undefined
   }} = {};
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private dialogService: NbDialogService) {
     this.workspaces$ = this.route.data.subscribe((data: Data) => {
       this.workspaces = data.workspaces;
     });
@@ -76,7 +78,13 @@ export class HelpSomeoneComponent implements OnInit {
       const topic: Topic | undefined = workspace?.topics.find(t => t.materials.some(m => m.id === hu.material.id));
       this.materialWorkspaceTopicMap[hu.material.id] = { workspace, topic };
     });
-
   }
 
+  openChatDialog() {
+    this.dialogService.open(ChatDialogComponent, {
+      context: {
+        //title: 'This is a title passed to the dialog component',
+      },
+    });
+  }
 }

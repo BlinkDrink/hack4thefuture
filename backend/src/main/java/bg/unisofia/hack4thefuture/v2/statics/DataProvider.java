@@ -2,6 +2,7 @@ package bg.unisofia.hack4thefuture.v2.statics;
 
 import bg.unisofia.hack4thefuture.v2.model.*;
 import bg.unisofia.hack4thefuture.v2.model.User;
+import org.json.JSONArray;
 
 import java.io.*;
 import java.util.*;
@@ -43,6 +44,17 @@ public class DataProvider {
 		workspaceMap = loadFromFile("data/workspace.db", workspaceMap);
 	}
 	
+	public static JSONArray getJson() {
+		var       workspaces = workspaceMap.values();
+		JSONArray root       = new JSONArray();
+		
+		for (Workspace workspace : workspaces) {
+			root.put(workspace.toJson());
+		}
+		
+		return root;
+	}
+	
 	private static <T> void saveToFile(String fileName, Map<UUID, T> map) {
 		File dbFile = new File(fileName);
 		
@@ -76,7 +88,6 @@ public class DataProvider {
 	public static class Get {
 		
 		/**
-		 *
 		 * @return
 		 */
 		public static List<Workspace> getWorkspaces() {
@@ -96,7 +107,6 @@ public class DataProvider {
 	public static class Post {
 		
 		/**
-		 *
 		 * @param workspace
 		 * @return True if successful, false otherwise
 		 */
@@ -134,7 +144,6 @@ public class DataProvider {
 	public static class Delete {
 		
 		/**
-		 *
 		 * @param id
 		 * @return True if successful, false otherwise
 		 */

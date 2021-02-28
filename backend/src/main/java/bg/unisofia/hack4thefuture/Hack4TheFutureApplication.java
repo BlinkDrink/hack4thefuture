@@ -1,5 +1,6 @@
 package bg.unisofia.hack4thefuture;
 
+import bg.unisofia.hack4thefuture.v2.model.Answer;
 import bg.unisofia.hack4thefuture.v2.statics.DataProvider;
 import bg.unisofia.hack4thefuture.v2.statics.DataSample;
 import org.springframework.boot.SpringApplication;

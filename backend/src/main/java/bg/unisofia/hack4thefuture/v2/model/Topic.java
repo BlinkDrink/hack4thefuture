@@ -1,6 +1,8 @@
 package bg.unisofia.hack4thefuture.v2.model;
 
 import bg.unisofia.hack4thefuture.v2.statics.DataProvider;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -69,5 +71,53 @@ public class Topic implements Serializable {
 	
 	public List<UUID> getTasks() {
 		return tasks;
+	}
+	
+	public JSONObject toJson() {
+		
+		int       materialsScore              = 0;
+		JSONArray materialsJsonArray = new JSONArray();
+		for (UUID id : materials) {
+			var material = DataProvider.materialMap.get(id);
+			
+			if (material != null) {
+				materialsJsonArray.put(material.toJson());
+				materialsScore += material.getScore();
+			}
+		}
+		
+		int       tasksScore              = 0;
+		JSONArray tasksJsonArray = new JSONArray();
+		for (UUID id : tasks) {
+			var task = DataProvider.taskMap.get(id);
+			
+			if (task != null) {
+				tasksJsonArray.put(task.toJson());
+				tasksScore += task.getPoints();
+			}
+		}
+		
+		JSONObject json = new JSONObject();
+		
+		json.put("id", getId());
+		json.put("name", getName());
+		json.put("materialsScore", materialsScore);
+		json.put("materialsScore", tasksScore);
+		json.put("materials", materialsJsonArray);
+		json.put("tasks", tasksJsonArray);
+		
+		return json;
+	}
+	
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("Topic{");
+		sb.append("id=").append(id);
+		sb.append(", points=").append(points);
+		sb.append(", name='").append(name).append('\'');
+		sb.append(", materials=").append(materials);
+		sb.append(", tasks=").append(tasks);
+		sb.append('}');
+		return sb.toString();
 	}
 }

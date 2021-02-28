@@ -1,6 +1,8 @@
 package bg.unisofia.hack4thefuture.v2.model;
 
 import bg.unisofia.hack4thefuture.v2.statics.DataProvider;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import javax.xml.crypto.Data;
 import java.io.Serializable;
@@ -65,5 +67,25 @@ public class Workspace implements Serializable {
 	
 	public List<UUID> getStudents() {
 		return students;
+	}
+	
+	public JSONObject toJson() {
+		JSONArray topicsJsonArray = new JSONArray();
+		
+		for (UUID id : topics) {
+			var topic = DataProvider.topicMap.get(id);
+			
+			if (topic != null) {
+				topicsJsonArray.put(topic.toJson());
+			}
+		}
+		
+		JSONObject json = new JSONObject();
+		
+		json.put("id", getId());
+		json.put("name", getName());
+		json.put("topics", topicsJsonArray);
+		
+		return json;
 	}
 }

@@ -1,6 +1,8 @@
 package bg.unisofia.hack4thefuture.v2.model;
 
 import bg.unisofia.hack4thefuture.v2.statics.DataProvider;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -51,5 +53,24 @@ public class Question implements Serializable {
 	
 	public List<UUID> getAnswers() {
 		return answers;
+	}
+	
+	public JSONObject toJson() {
+		JSONArray answersJsonArray = new JSONArray();
+		for (UUID id : answers) {
+			var question = DataProvider.answerMap.get(id);
+			
+			if (question != null) {
+				answersJsonArray.put(question.toJson());
+			}
+		}
+		
+		JSONObject json = new JSONObject();
+		
+		json.put("id", getId());
+		json.put("text", getQuestionText());
+		json.put("answers", answersJsonArray);
+		
+		return json;
 	}
 }

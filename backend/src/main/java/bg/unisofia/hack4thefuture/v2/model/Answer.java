@@ -1,6 +1,7 @@
 package bg.unisofia.hack4thefuture.v2.model;
 
 import bg.unisofia.hack4thefuture.v2.statics.DataProvider;
+import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -49,5 +50,15 @@ public class Answer implements Serializable {
 	
 	public String getExplanation() {
 		return explanation;
+	}
+	
+	public JSONObject toJson() {
+		JSONObject json = new JSONObject();
+		
+		json.put("text", getText());
+		json.put("explanation", getExplanation());
+		json.put("isCorrect", isCorrect());
+		
+		return json;
 	}
 }

@@ -86,12 +86,15 @@ public class DataSample {
 		
 		User adminUser = new User();
 		adminUser.setName("Kris Vachev");
+		adminUser.addWorkspaceAdmin(work1.getId());
 		
 		User studentUser1 = new User();
 		studentUser1.setName("Petko Petkov");
+		studentUser1.addWorkspace(work1.getId());
 		
 		User studentUser2 = new User();
 		studentUser2.setName("Teodor Todorov");
+		studentUser2.addWorkspace(work1.getId());
 		
 		work1.setAdmin(adminUser.getId());
 		work1.addStudent(studentUser1.getId());

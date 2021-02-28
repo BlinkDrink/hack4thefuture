@@ -19,7 +19,7 @@ public class WorkspaceController {
 	
 	@PostMapping("/api/workspaces")
 	public Workspace postWorkspaces(Workspace workspace) {
-		workspace.id = UUID.randomUUID();
+		workspace.setId(UUID.randomUUID());
 		DataProvider.Post.addWorkspace(workspace);
 		return workspace;
 	}
@@ -49,7 +49,7 @@ public class WorkspaceController {
 	public void putTopic(@PathVariable String workspaceId, Topic topic) {
 		try {
 			UUID id = UUID.fromString(workspaceId);
-			topic.id = UUID.randomUUID();
+			topic.setId(UUID.randomUUID());
 			
 			DataProvider.Post.addTopic(id, topic);
 		}

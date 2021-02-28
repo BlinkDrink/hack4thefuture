@@ -1,6 +1,7 @@
 package bg.unisofia.hack4thefuture.v2.statics;
 
 import bg.unisofia.hack4thefuture.v2.model.*;
+import bg.unisofia.hack4thefuture.v2.model.User;
 
 import java.io.*;
 import java.util.*;
@@ -8,13 +9,13 @@ import java.util.stream.Collectors;
 
 public class DataProvider {
 	
-	private static Map<UUID, Answer>    answerMap    = new HashMap<>();
-	private static Map<UUID, Material>  materialMap  = new HashMap<>();
-	private static Map<UUID, Question>  questionMap  = new HashMap<>();
-	private static Map<UUID, Task>      taskMap      = new HashMap<>();
-	private static Map<UUID, Topic>     topicMap     = new HashMap<>();
-	private static Map<UUID, User>      userMap      = new HashMap<>();
-	private static Map<UUID, Workspace> workspaceMap = new HashMap<>();
+	public static Map<UUID, Answer>    answerMap    = new HashMap<>();
+	public static Map<UUID, Material>  materialMap  = new HashMap<>();
+	public static Map<UUID, Question>  questionMap  = new HashMap<>();
+	public static Map<UUID, Task>      taskMap      = new HashMap<>();
+	public static Map<UUID, Topic>     topicMap     = new HashMap<>();
+	public static Map<UUID, User>      userMap      = new HashMap<>();
+	public static Map<UUID, Workspace> workspaceMap = new HashMap<>();
 	
 	public static void save() {
 		File dir = new File("data");
@@ -101,12 +102,12 @@ public class DataProvider {
 		 */
 		public static boolean addWorkspace(Workspace workspace) {
 			for (var entry : workspaceMap.entrySet()) {
-				if (workspace.id.equals(entry.getKey())) {
+				if (workspace.getId().equals(entry.getKey())) {
 					return false;
 				}
 			}
 			
-			workspaceMap.put(workspace.id, workspace);
+			workspaceMap.put(workspace.getId(), workspace);
 			saveToFile("data/workspace.db", workspaceMap);
 			return true;
 		}
@@ -118,8 +119,8 @@ public class DataProvider {
 				return false;
 			}
 			
-			workspace.topics.add(topic.id);
-			topicMap.put(topic.id, topic);
+			workspace.getTopics().add(topic.getId());
+			topicMap.put(topic.getId(), topic);
 			
 			saveToFile("data/workspace.db", workspaceMap);
 			saveToFile("data/topic.db", topicMap);

@@ -1,6 +1,7 @@
 package bg.unisofia.hack4thefuture;
 
 import bg.unisofia.hack4thefuture.v2.statics.DataProvider;
+import bg.unisofia.hack4thefuture.v2.statics.DataSample;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -22,6 +23,7 @@ public class Hack4TheFutureApplication {
 		
 		// v2
 		DataProvider.load();
+//		DataSample.addSampleData();
 		DataProvider.save();
 	}
 }

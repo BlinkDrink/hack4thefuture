@@ -27,6 +27,7 @@ public class Workspace implements Serializable {
 	
 	public void setId(UUID id) {
 		this.id = id;
+		DataProvider.save();
 	}
 	
 	public void setName(String name) {

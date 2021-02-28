@@ -26,14 +26,17 @@ public class Task implements Serializable {
 	
 	public void setPoints(int points) {
 		this.points = points;
+		DataProvider.save();
 	}
 	
 	public void setLink(String link) {
 		this.link = link;
+		DataProvider.save();
 	}
 	
 	public void setName(String name) {
 		this.name = name;
+		DataProvider.save();
 	}
 	
 	public UUID getId() {

@@ -26,14 +26,17 @@ public class Answer implements Serializable {
 	
 	public void setCorrect(boolean correct) {
 		isCorrect = correct;
+		DataProvider.save();
 	}
 	
 	public void setText(String text) {
 		this.text = text;
+		DataProvider.save();
 	}
 	
 	public void setExplanation(String explanation) {
 		this.explanation = explanation;
+		DataProvider.save();
 	}
 	
 	public UUID getId() {

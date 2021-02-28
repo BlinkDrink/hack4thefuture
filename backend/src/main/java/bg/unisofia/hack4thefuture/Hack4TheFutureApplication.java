@@ -24,7 +24,7 @@ public class Hack4TheFutureApplication {
 		
 		// v2
 		DataProvider.load();
-//		DataSample.addSampleData();
+		DataSample.addSampleData();
 		DataProvider.save();
 	}
 }

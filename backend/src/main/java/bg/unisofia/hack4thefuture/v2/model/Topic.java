@@ -30,6 +30,7 @@ public class Topic implements Serializable {
 	
 	public void setId(UUID id) {
 		this.id = id;
+		DataProvider.save();
 	}
 	
 	public void setPoints(int points) {
@@ -75,7 +76,7 @@ public class Topic implements Serializable {
 	
 	public JSONObject toJson() {
 		
-		int       materialsScore              = 0;
+		int       materialsScore     = 0;
 		JSONArray materialsJsonArray = new JSONArray();
 		for (UUID id : materials) {
 			var material = DataProvider.materialMap.get(id);
@@ -86,7 +87,7 @@ public class Topic implements Serializable {
 			}
 		}
 		
-		int       tasksScore              = 0;
+		int       tasksScore     = 0;
 		JSONArray tasksJsonArray = new JSONArray();
 		for (UUID id : tasks) {
 			var task = DataProvider.taskMap.get(id);
@@ -102,9 +103,10 @@ public class Topic implements Serializable {
 		json.put("id", getId());
 		json.put("name", getName());
 		json.put("materialsScore", materialsScore);
-		json.put("materialsScore", tasksScore);
+		json.put("tasksScore", tasksScore);
 		json.put("materials", materialsJsonArray);
 		json.put("tasks", tasksJsonArray);
+		json.put("score", (tasksScore + materialsScore) / 2);
 		
 		return json;
 	}

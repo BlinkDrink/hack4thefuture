@@ -30,14 +30,22 @@ public class Material implements Serializable {
 	
 	public void setName(String name) {
 		this.name = name;
+		DataProvider.save();
 	}
 	
 	public void setLink(String link) {
 		this.link = link;
+		DataProvider.save();
 	}
 	
 	public void setScore(int score) {
 		this.score = score;
+		DataProvider.save();
+	}
+	
+	public void addQuestion(UUID question) {
+		this.questions.add(question);
+		DataProvider.save();
 	}
 	
 	public List<UUID> getQuestions() {
@@ -58,11 +66,6 @@ public class Material implements Serializable {
 	
 	public int getScore() {
 		return score;
-	}
-	
-	public void addQuestion(UUID question) {
-		this.questions.add(question);
-		DataProvider.save();
 	}
 	
 	public JSONObject toJson() {

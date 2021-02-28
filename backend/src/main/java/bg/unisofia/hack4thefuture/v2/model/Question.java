@@ -28,10 +28,12 @@ public class Question implements Serializable {
 	
 	public void setPoints(int points) {
 		this.points = points;
+		DataProvider.save();
 	}
 	
 	public void setQuestionText(String questionText) {
 		this.questionText = questionText;
+		DataProvider.save();
 	}
 	
 	public void addAnswer(UUID answer) {

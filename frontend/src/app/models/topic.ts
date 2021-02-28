@@ -1,4 +1,4 @@
-import { Material } from "./material";
+import { Material } from './material';
 
 export class Topic {
     id: string = '';
@@ -6,4 +6,3 @@ export class Topic {
     score: number = 0;
     materials: Material[] = [];
   }
-  

@@ -46,8 +46,10 @@ export class InMemoryDataService implements InMemoryDbService {
                       }
                     ]
                   }
-                ]
-              }, {
+                ],
+                score: 100
+              },
+              {
                 id: '9420e73b-48a6-471d-b25d-9d14942e4342',
                 name: 'What is the Rule of Four (and a half)?',
                 link: 'https://stackoverflow.com/questions/45754226/what-is-the-rule-of-four-and-a-half',
@@ -73,7 +75,8 @@ export class InMemoryDataService implements InMemoryDbService {
                       }
                     ]
                   }
-                ]
+                ],
+                score: 0
               }
             ],
             score: 50
@@ -113,7 +116,8 @@ export class InMemoryDataService implements InMemoryDbService {
                       }
                     ]
                   }
-                ]
+                ],
+                score: 0
               }
             ],
             score: 0

@@ -13,24 +13,27 @@
 
 <div class="container-fluid p-0">
   <div class="row">
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="danger">
-        <nb-card-header>Tiny card</nb-card-header>
+    <div *ngFor="let topic of topics" class="col-sm-12 col-md-3">
+      <nb-card *ngIf="topic.score < 25 || topic.score === 25" size="tiny" accent= "danger">
+        <nb-card-header>{{topic.name}}</nb-card-header>
+        <nb-card-body>
+          Materials: 25 <br>
+          Tasks: 15
+        </nb-card-body>
       </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="warning">
-        <nb-card-header>Tiny card</nb-card-header>
+      <nb-card *ngIf="topic.score > 25 && topic.score < 75" size="tiny" accent="warning">
+        <nb-card-header>{{topic.name}}</nb-card-header>
+        <nb-card-body>
+          Materials: 55 <br>
+          Tasks: 45
+        </nb-card-body>
       </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="success">
-        <nb-card-header>Tiny card</nb-card-header>
-      </nb-card>
-    </div>
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="success">
-        <nb-card-header>Tiny card Tiny card Tiny card Tiny card Tiny card</nb-card-header>
+      <nb-card *ngIf="topic.score > 75 || topic.score === 75" size="tiny" accent="success">
+        <nb-card-header>{{topic.name}}</nb-card-header>
+        <nb-card-body>
+          Materials: 75 <br>
+          Tasks: 35
+        </nb-card-body> 
       </nb-card>
     </div>
   </div>

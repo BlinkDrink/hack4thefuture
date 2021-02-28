@@ -62,13 +62,11 @@ export class InMemoryDataService implements InMemoryDbService {
                         text: 'That if you implement one of the of the big four functions, move constructor or a swap operator, you need to override the rest, as well',
                         explanation: 'Or they might not work correctly (assigment operator sometimes calls copy constructor as an optimization, for example).',
                         isCorrect: true
-                      },
-                      {
+                      }, {
                         text: 'Alpaca',
                         explanation: 'This should have been the right answer.',
                         isCorrect: false
-                      },
-                      {
+                      }, {
                         text: 'Destructor',
                         explanation: 'This is from a different question.',
                         isCorrect: false
@@ -76,10 +74,29 @@ export class InMemoryDataService implements InMemoryDbService {
                     ]
                   }
                 ],
-                score: 0
+                score: 0,
               }
             ],
-            tasks: [],
+            tasks: [
+              {
+                id: '8ef97095-c86b-424c-aa64-4bb879100fbd',
+                name: 'Java Inheritance I',
+                link: 'https://www.hackerrank.com/challenges/java-inheritance-1',
+                score: 76
+              }, {
+                id: '334082e6-27b5-47f7-89ee-a4e0aaca86c5',
+                name: 'Java Inheritance II',
+                link: 'https://www.hackerrank.com/challenges/java-inheritance-2',
+                score: 53
+              }, {
+                id: 'ff2dc67a-16ea-4ebe-bf04-4ecdf35ab001',
+                name: 'Java Abstract Class',
+                link: 'https://www.hackerrank.com/challenges/java-abstract-class',
+                score: 21
+              }
+            ],
+            materialsScore: 76,
+            tasksScore: 24,
             score: 50
           },
           {
@@ -87,6 +104,8 @@ export class InMemoryDataService implements InMemoryDbService {
             name: 'Virtual functions',
             materials: [],
             tasks: [],
+            materialsScore: 100,
+            tasksScore: 100,
             score: 100
           }
         ]
@@ -123,6 +142,8 @@ export class InMemoryDataService implements InMemoryDbService {
               }
             ],
             tasks: [],
+            materialsScore: 0,
+            tasksScore: 0,
             score: 0
           }
         ]

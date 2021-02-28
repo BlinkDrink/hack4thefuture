@@ -28,47 +28,28 @@
   <div class="row">
     <div *ngFor="let material of topic?.materials" class="col-sm-12 col-md-2">
       <nb-card *ngIf="material.score < 25 || material.score === 25" size="tiny" accent= "danger">
-        <nb-card-header>{{ material.name }}</nb-card-header>
-        <nb-card-body>
-          <p class="mt-1 pt-3">Quiz Score: 25/100</p>
-        </nb-card-body>
-        <nb-card-footer>
-          <a href="{{material.link}}" target="_blank">
-            <button nbButton size="small" status="primary">Learn</button>
-          </a>
-          <a [routerLink]="['/workspaces', workspace?.id, 'topics']">
-            <button class="float-right" nbButton size="small" status="primary">Quiz</button>
-          </a>
-        </nb-card-footer>
+        <ng-template [ngTemplateOutlet]="materialCard"></ng-template>
       </nb-card>
       <nb-card *ngIf="material.score > 25 && material.score < 75" size="tiny" accent="warning">
-        <nb-card-header>{{ material.name }}</nb-card-header>
-        <nb-card-body>
-          <p class="mt-1 pt-3">Quiz Score: 25/100</p>
-        </nb-card-body>
-        <nb-card-footer>
-          <a href="{{material.link}}" target="_blank">
-            <button nbButton size="small" status="primary">Learn</button>
-          </a>
-          <a [routerLink]="['/workspaces', workspace?.id, 'topics']">
-            <button class="float-right" nbButton size="small" status="primary">Quiz</button>
-          </a>
-        </nb-card-footer>
+        <ng-template [ngTemplateOutlet]="materialCard"></ng-template>
       </nb-card>
       <nb-card *ngIf="material.score > 75 || material.score === 75" size="tiny" accent="success">
+        <ng-template [ngTemplateOutlet]="materialCard"></ng-template>
+      </nb-card>
+      <ng-template #materialCard>
         <nb-card-header>{{ material.name }}</nb-card-header>
         <nb-card-body>
-          <p class="mt-1 pt-3">Quiz Score: 25/100</p>
+          <p class="mt-1 pt-3">Quiz Score: {{ material.score }}/100</p>
         </nb-card-body>
         <nb-card-footer>
-          <a href="{{material.link}}" target="_blank">
+          <a href="{{ material.link }}" target="_blank">
             <button nbButton size="small" status="primary">Learn</button>
           </a>
           <a [routerLink]="['/workspaces', workspace?.id, 'topics']">
             <button class="float-right" nbButton size="small" status="primary">Quiz</button>
           </a>
         </nb-card-footer>
-      </nb-card>
+      </ng-template>
     </div>
   </div>
 </div>
@@ -76,18 +57,27 @@
 <h5>Tasks  ({{ topic?.tasks?.length }}):</h5>
 <div class="container-fluid p-0">
   <div class="row">
-    <div class="col-sm-12 col-md-2">
-      <nb-card size="tiny" accent="danger">
-        <nb-card-header>Tiny card</nb-card-header>
+    <div *ngFor="let task of topic?.tasks" class="col-sm-12 col-md-2">
+      <nb-card *ngIf="task.score < 25 || task.score === 25" size="tiny" accent= "danger">
+        <ng-template [ngTemplateOutlet]="taskCard"></ng-template>
+      </nb-card>
+      <nb-card *ngIf="task.score > 25 && task.score < 75" size="tiny" accent="warning">
+        <ng-template [ngTemplateOutlet]="taskCard"></ng-template>
+      </nb-card>
+      <nb-card *ngIf="task.score > 75 || task.score === 75" size="tiny" accent="success">
+        <ng-template [ngTemplateOutlet]="taskCard"></ng-template>
+      </nb-card>
+      <ng-template #taskCard>
+        <nb-card-header>{{ task.name }}</nb-card-header>
         <nb-card-body>
-          <p class="mt-1 pt-3">Task Score: 25/100</p>
+          <p class="mt-1 pt-3">Task Score: {{ task.score }}/100</p>
         </nb-card-body>
         <nb-card-footer>
-          <a [routerLink]="['/workspaces', workspace?.id, 'topics']">
+          <a href="{{ task.link }}" target="_blank">
             <button class="float-right" nbButton size="small" status="primary">Solve</button>
           </a>
         </nb-card-footer>
-      </nb-card>
+      </ng-template>
     </div>
   </div>
 </div>

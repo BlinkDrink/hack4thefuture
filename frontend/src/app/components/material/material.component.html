@@ -23,11 +23,9 @@
       <nb-card>
         <nb-card-header>{{ i + 1}}. {{ question.text }}</nb-card-header>
         <nb-card-body>
-          <nb-radio-group [(ngModel)]="options">
-            <nb-radio
-              *ngFor="let option of options"
-              [value]="option.value">
-              {{ option.label }}
+          <nb-radio-group [(ngModel)]="question.answers">
+            <nb-radio *ngFor="let answer of question.answers" [value]="answer.isCorrect">
+              {{ answer.text }}
             </nb-radio>
           </nb-radio-group>
         </nb-card-body>
@@ -35,3 +33,5 @@
     </div>
   </div>
 </div>
+
+<button nbButton fullWidth status="success" size="giant">Submit<nb-icon icon="paper-plane-outline"></nb-icon></button>

@@ -26,7 +26,7 @@
 <h5>Materials ({{ topic?.materials?.length }}):</h5>
 <div class="container-fluid p-0">
   <div class="row">
-    <div *ngFor="let material of topic?.materials" class="col-sm-12 col-md-2">
+    <div *ngFor="let material of topic?.materials" class="col-sm-12 col-md-3">
       <nb-card *ngIf="material.score < 25 || material.score === 25" size="tiny" accent= "danger">
         <ng-template [ngTemplateOutlet]="materialCard"></ng-template>
       </nb-card>
@@ -57,7 +57,7 @@
 <h5>Tasks  ({{ topic?.tasks?.length }}):</h5>
 <div class="container-fluid p-0">
   <div class="row">
-    <div *ngFor="let task of topic?.tasks" class="col-sm-12 col-md-2">
+    <div *ngFor="let task of topic?.tasks" class="col-sm-12 col-md-3">
       <nb-card *ngIf="task.score < 25 || task.score === 25" size="tiny" accent= "danger">
         <ng-template [ngTemplateOutlet]="taskCard"></ng-template>
       </nb-card>

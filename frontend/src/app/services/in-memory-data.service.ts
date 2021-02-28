@@ -27,7 +27,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 questions: [
                   {
                     id: 'afa70ec4-430b-40d1-a85c-4a621fa42501',
-                    name: 'Which of those isn\'t of the big four',
+                    text: 'Which of those isn\'t of the big four',
                     answers: [
                       {
                         text: 'Constructor',
@@ -56,11 +56,11 @@ export class InMemoryDataService implements InMemoryDbService {
                 questions: [
                   {
                     id: '828882bb-28b0-4eab-bed8-1fdd13ad50af',
-                    name: 'What does the rule of four and a half state.',
+                    text: 'What does the rule of four and a half state.',
                     answers: [
                       {
                         text: 'That if you implement one of the of the big four functions, move constructor or a swap operator, you need to override the rest, as well',
-                        explanation: 'Or they might not work correctly (assigment operator sometimes calls copy constructor as an optimization, for example).',
+                        explanation: 'Or they might not work correctly (assignment operator sometimes calls copy constructor as an optimization, for example).',
                         isCorrect: true
                       }, {
                         text: 'Alpaca',
@@ -119,12 +119,12 @@ export class InMemoryDataService implements InMemoryDbService {
             materials: [
               {
                 id: 'dc46b228-36cd-4000-85e4-5cdc5dd4b6da',
-                name: 'Xi Jinping declares complete vicotry in eradicating poverty in China',
+                name: 'Xi Jinping declares complete victory in eradicating poverty in China',
                 link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwijhaue_IrvAhVDOBoKHQSgB3YQxfQBMAB6BAgFEAM&url=https%3A%2F%2Fwww.thehindu.com%2Fnews%2Finternational%2Fpresident-xi-jinping-declares-complete-victory-in-eradicating-poverty-in-china%2Farticle33930137.ece&usg=AOvVaw2uDS3fStwIBYkG6Zrq7pXJ',
                 questions: [
                   {
                     id: '85f7e501-253d-41cb-a780-ad6c1f0fb008',
-                    name: 'What cartoon animal does the president of China resemble?',
+                    text: 'What cartoon animal does the president of China resemble?',
                     answers: [
                       {
                         text: 'Bear',

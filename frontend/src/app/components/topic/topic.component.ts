@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, Params } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { Topic } from 'src/app/models/topic';
 import { Workspace } from 'src/app/models/workspace';
 

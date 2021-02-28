@@ -8,6 +8,7 @@ import { WorkspaceListResolverService } from './resolvers/workspace-list-resolve
 import { TrackProgressComponent } from './track-progress/track-progress.component';
 import { MaterialDetailComponent } from './material-detail/material-detail.component';
 import { TopicComponent } from './components/topic/topic.component';
+import { MaterialComponent } from './components/material/material.component';
 
 const routes: Routes = [
   {
@@ -31,13 +32,17 @@ const routes: Routes = [
         resolve: { workspaces: WorkspaceListResolverService } // WorkspaceResolverService }
       },
       {
+        path: 'workspaces/:workspaceId/topics/:topicId/materials/:materialId',
+        component: MaterialComponent,
+        resolve: { workspaces: WorkspaceListResolverService } // WorkspaceResolverService }
+      },
+      { path: 'track-progress', component: TrackProgressComponent },
+      {
         path: 'help-someone',
         component: HelpSomeoneComponent,
         resolve: { workspaces: WorkspaceListResolverService } // WorkspaceResolverService }
       },
-      { path: 'track-progress', component: TrackProgressComponent },
-      { path: '**', redirectTo: '', pathMatch: 'full' },
-      { path: 'workspaces/:id', component: MaterialDetailComponent }
+      { path: '**', redirectTo: '', pathMatch: 'full' }
     ]
   }
 ];

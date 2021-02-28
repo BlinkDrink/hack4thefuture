@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule,
          NbIconModule, NbMenuModule, NbButtonGroupModule,
-         NbListModule, NbActionsModule, NbCardModule, NbSearchModule
+         NbListModule, NbActionsModule, NbCardModule, NbSearchModule, NbRadioModule
        } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { WorkspaceComponent } from './components/workspace/workspace.component';
@@ -18,9 +18,10 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TrackProgressComponent } from './track-progress/track-progress.component';
-import { HomeComponent } from './components/home/home.component';
 import { MaterialDetailComponent } from './material-detail/material-detail.component';
 import { TopicComponent } from './components/topic/topic.component';
+import { MaterialComponent } from './components/material/material.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TopicComponent } from './components/topic/topic.component';
     RouterComponent,
     TrackProgressComponent,
     MaterialDetailComponent,
-    TopicComponent
+    TopicComponent,
+    MaterialComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { TopicComponent } from './components/topic/topic.component';
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 0 }),
+    FormsModule,
     NgxSpinnerModule,
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
@@ -53,7 +56,8 @@ import { TopicComponent } from './components/topic/topic.component';
     NbListModule,
     NbActionsModule,
     NbCardModule,
-    NbSearchModule
+    NbSearchModule,
+    NbRadioModule
   ],
   providers: [
     InMemoryDataService,

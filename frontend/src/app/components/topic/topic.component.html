@@ -45,7 +45,7 @@
           <a href="{{ material.link }}" target="_blank">
             <button nbButton size="small" status="primary">Learn</button>
           </a>
-          <a [routerLink]="['/workspaces', workspace?.id, 'topics']">
+          <a [routerLink]="['/workspaces', workspace?.id, 'topics', topic?.id, 'materials', material.id]">
             <button class="float-right" nbButton size="small" status="primary">Quiz</button>
           </a>
         </nb-card-footer>

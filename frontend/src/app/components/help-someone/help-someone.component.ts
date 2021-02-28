@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HelpUser } from 'src/app/models/helpuser';
+import { Topic } from 'src/app/models/topic';
 import { Workspace } from 'src/app/models/workspace';
 
 @Component({
@@ -52,9 +53,14 @@ export class HelpSomeoneComponent implements OnInit {
       question: 'I don\'t understand templates, help!'
     }
   ];
-  
+
   private workspaces: Workspace[] = [];
   private workspaces$: Subscription;
+
+  materialWorkspaceTopicMap: {[key: string]: {
+    workspace: Workspace | undefined,
+    topic: Topic | undefined
+  }} = {};
 
   constructor(private route: ActivatedRoute) {
     this.workspaces$ = this.route.data.subscribe((data: Data) => {
@@ -63,6 +69,13 @@ export class HelpSomeoneComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.helpUsers.forEach(hu => {
+      const workspace: Workspace | undefined = this.workspaces.
+                                        find(ws => ws.topics
+                                          .some(t => t.id === hu.material.id));
+      const topic: Topic | undefined = workspace?.topics.find(t => t.id === hu.material.id);
+      this.materialWorkspaceTopicMap[hu.material.id] = { workspace, topic };
+    });
 
   }
 

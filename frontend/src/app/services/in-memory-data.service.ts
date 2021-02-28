@@ -107,6 +107,37 @@ export class InMemoryDataService implements InMemoryDbService {
             materialsScore: 100,
             tasksScore: 100,
             score: 100
+          },
+          {
+            id: 'b6ec13fb-3c6d-41e7-828c-f8e752154330',
+            name: 'Basics',
+            materials: [
+              {
+                id: '1b2c214f-e255-4e05-bfdb-f0026be3cc69',
+                name: 'Dynamic memory',
+                link: 'https://www.cplusplus.com/doc/tutorial/dynamic/',
+                questions: [],
+                score: 20
+              },
+              {
+                id: '3a94f370-e5fe-4fb0-ad1d-598bd5308214',
+                name: 'Array data structure',
+                link: 'https://en.wikipedia.org/wiki/Array_data_structure',
+                questions: [],
+                score: 0
+              },
+              {
+                id: '95f0eb44-d1bc-4058-a9f2-35cfa1505611',
+                name: 'Understanding Move Semantics and Perfect Forwarding: Part 1',
+                link: 'https://drewcampbell92.medium.com/understanding-move-semantics-and-perfect-forwarding-987cf4dc7e27',
+                questions: [],
+                score: 30
+              }
+            ],
+            tasks: [],
+            materialsScore: 100,
+            tasksScore: 100,
+            score: 100
           }
         ]
       }, {

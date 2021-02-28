@@ -17,23 +17,38 @@
       <nb-card *ngIf="topic.score < 25 || topic.score === 25" size="tiny" accent= "danger">
         <nb-card-header>{{topic.name}}</nb-card-header>
         <nb-card-body>
-          Materials: 25 <br>
-          Tasks: 15
+          <p>Materials Progress: 25/100</p>
+          <p class="mb-0 pb-0">Tasks Progress: 15/100</p>
         </nb-card-body>
+        <nb-card-footer>
+          <a [routerLink]="['/workspaces', workspace?.id, 'topics', topic.id]">
+            <button class="float-right" nbButton size="small" status="primary">Open</button>
+          </a>
+        </nb-card-footer>
       </nb-card>
       <nb-card *ngIf="topic.score > 25 && topic.score < 75" size="tiny" accent="warning">
         <nb-card-header>{{topic.name}}</nb-card-header>
         <nb-card-body>
-          Materials: 55 <br>
-          Tasks: 45
+          <p>Materials Progress: 25/100</p>
+          <p class="mb-0 pb-0">Tasks Progress: 15/100</p>
         </nb-card-body>
+        <nb-card-footer>
+          <a [routerLink]="['/workspaces', workspace?.id, 'topics', topic.id]">
+            <button class="float-right" nbButton size="small" status="primary">Open</button>
+          </a>
+        </nb-card-footer>
       </nb-card>
       <nb-card *ngIf="topic.score > 75 || topic.score === 75" size="tiny" accent="success">
         <nb-card-header>{{topic.name}}</nb-card-header>
         <nb-card-body>
-          Materials: 75 <br>
-          Tasks: 35
+          <p>Materials Progress: 25/100</p>
+          <p class="mb-0 pb-0">Tasks Progress: 15/100</p>
         </nb-card-body>
+        <nb-card-footer>
+          <a [routerLink]="['/workspaces', workspace?.id, 'topics', topic.id]">
+            <button class="float-right" nbButton size="small" status="primary">Open</button>
+          </a>
+        </nb-card-footer>
       </nb-card>
     </div>
   </div>

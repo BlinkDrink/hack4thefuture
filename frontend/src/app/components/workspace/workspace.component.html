@@ -2,6 +2,7 @@
   <nb-card-body>
     <nb-actions size="small">
       <nb-action>
+        <nb-badge class="ml-1" status="warning" position="center left"></nb-badge>
         Workspace: {{ workspace?.name }}
       </nb-action>
       <nb-action class="d-none d-sm-flex">
@@ -32,10 +33,20 @@
         </nb-card-body>
         <nb-card-footer>
           <a [routerLink]="['/workspaces', workspace?.id, 'topics', topic.id]">
-            <button class="float-right" nbButton size="small" status="primary">Open</button>
+            <button class="float-right" nbButton size="small" status="primary">Open<nb-icon icon="arrow-forward-outline"></nb-icon></button>
           </a>
         </nb-card-footer>
       </ng-template>
+    </div>
+    <div class="col-sm-12 col-md-2">
+      <nb-card size="tiny" accent="primary">
+        <nb-card-header class="text-center">Add Topic</nb-card-header>
+        <nb-card-body>
+          <nb-actions class="pt-1" size="giant">
+            <nb-action class="pt-5 m-auto" icon="plus"></nb-action>
+          </nb-actions>
+        </nb-card-body>
+      </nb-card>
     </div>
   </div>
 </div>

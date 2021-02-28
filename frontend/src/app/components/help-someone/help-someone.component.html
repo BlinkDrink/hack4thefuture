@@ -1,11 +1,17 @@
 <div class="container-fluid p-0">
-    <div class="row">
-        <div *ngFor="let helpUser of helpUsers" class="col-sm-12 col-md-3">
-            <nb-card size="small" accent= "danger">
-                <nb-card-header> {{this.materialWorkspaceTopicMap[helpUser.material.id].topic?.name}}/{{helpUser.material.name}} </nb-card-header>
-                <nb-card-body> {{helpUser.question}} </nb-card-body>
-                <nb-card-footer> {{helpUser.user.name}} </nb-card-footer>
-            </nb-card>
-        </div>
+  <div class="row">
+    <div *ngFor="let helpUser of helpUsers" class="col-sm-12 col-md-3">
+      <nb-card size="small" accent= "success">
+        <nb-card-header>{{ this.materialWorkspaceTopicMap[helpUser.material.id].workspace?.name }}/ {{ this.materialWorkspaceTopicMap[helpUser.material.id].topic?.name }}</nb-card-header>
+        <nb-card-body>
+          <h6>{{ helpUser.material.name }}</h6>
+          <p>{{ helpUser.question }}</p>
+        </nb-card-body>
+        <nb-card-footer>
+          <button nbButton outline size="small" status="primary">{{ helpUser.user.name }} <nb-icon icon="person-outline"></nb-icon></button>
+          <button class="float-right" nbButton size="small" status="primary">Help<nb-icon icon="message-square-outline"></nb-icon></button>
+        </nb-card-footer>
+      </nb-card>
     </div>
   </div>
+</div>

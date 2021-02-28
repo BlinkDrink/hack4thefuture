@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule,
          NbIconModule, NbMenuModule, NbButtonGroupModule,
-         NbListModule, NbActionsModule, NbCardModule, NbSearchModule, NbRadioModule
+         NbListModule, NbActionsModule, NbCardModule, NbSearchModule, NbRadioModule, NbBadgeModule
        } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { WorkspaceComponent } from './components/workspace/workspace.component';
@@ -57,7 +57,8 @@ import { FormsModule } from '@angular/forms';
     NbActionsModule,
     NbCardModule,
     NbSearchModule,
-    NbRadioModule
+    NbRadioModule,
+    NbBadgeModule
   ],
   providers: [
     InMemoryDataService,

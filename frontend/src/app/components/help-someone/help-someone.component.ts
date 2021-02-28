@@ -72,8 +72,8 @@ export class HelpSomeoneComponent implements OnInit {
     this.helpUsers.forEach(hu => {
       const workspace: Workspace | undefined = this.workspaces.
                                         find(ws => ws.topics
-                                          .some(t => t.id === hu.material.id));
-      const topic: Topic | undefined = workspace?.topics.find(t => t.id === hu.material.id);
+                                          .some(t => t.materials.some(m => m.id === hu.material.id)));
+      const topic: Topic | undefined = workspace?.topics.find(t => t.materials.some(m => m.id === hu.material.id));
       this.materialWorkspaceTopicMap[hu.material.id] = { workspace, topic };
     });
 

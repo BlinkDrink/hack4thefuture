@@ -47,7 +47,7 @@ export class SidebarComponent implements OnInit {
         link: '/help-someone',
         icon: 'smiling-face-outline',
         badge: {
-          text: '26',
+          text: '3',
           status: 'success',
         }
       }

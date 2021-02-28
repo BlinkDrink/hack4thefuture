@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule,
          NbIconModule, NbMenuModule, NbButtonGroupModule,
-         NbListModule, NbActionsModule, NbCardModule, NbSearchModule, NbRadioModule, NbBadgeModule, NbDialogService, NbDialogModule, NbChatModule
+         NbListModule, NbActionsModule, NbCardModule, NbSearchModule, NbRadioModule, NbBadgeModule, NbDialogService, NbDialogModule, NbChatModule, NbTooltipModule
        } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { WorkspaceComponent } from './components/workspace/workspace.component';
@@ -62,7 +62,8 @@ import { ChatDialogComponent } from './components/chat-dialog/chat-dialog.compon
     NbRadioModule,
     NbBadgeModule,
     NbDialogModule.forRoot(),
-    NbChatModule.forRoot()
+    NbChatModule.forRoot(),
+    NbTooltipModule
   ],
   providers: [
     NbDialogService,

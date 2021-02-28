@@ -40,9 +40,14 @@
         <ng-template [ngTemplateOutlet]="materialCard"></ng-template>
       </nb-card>
       <ng-template #materialCard>
-        <nb-card-header>{{ material.name }}</nb-card-header>
+        <nb-card-header>
+          {{ material.name }}
+        </nb-card-header>
         <nb-card-body>
-          <p class="mt-1 pt-3">Quiz Score: {{ material.score }}/100</p>
+          <p class="mt-1 pt-3">
+            Quiz Score: {{ material.score }}/100
+            <button class="float-right mt-n2" nbButton outline size="small" status="primary">Get help!</button>
+          </p>
         </nb-card-body>
         <nb-card-footer>
           <a href="{{ material.link }}" target="_blank">
@@ -81,9 +86,15 @@
         <ng-template [ngTemplateOutlet]="taskCard"></ng-template>
       </nb-card>
       <ng-template #taskCard>
-        <nb-card-header>{{ task.name }}</nb-card-header>
+        <nb-card-header>
+          {{ task.name }}
+          <button class="mt-1 p-0 float-right" nbButton ghost status="primary"><nb-icon icon="question-mark-circle-outline"></nb-icon></button>
+        </nb-card-header>
         <nb-card-body>
-          <p class="mt-1 pt-3">Task Score: {{ task.score }}/100</p>
+          <p class="mt-1 pt-3">
+            Task Score: {{ task.score }}/100
+            <button class="float-right mt-n2" nbButton outline size="small" status="primary">Get help!</button>
+          </p>
         </nb-card-body>
         <nb-card-footer>
           <a href="{{ task.link }}" target="_blank">

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Data } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { HelpUser } from 'src/app/models/helpuser';
+import { Workspace } from 'src/app/models/workspace';
 
 @Component({
   selector: 'app-help-someone',
@@ -15,11 +18,12 @@ export class HelpSomeoneComponent implements OnInit {
       },
       material: {
         id: '3a94f370-e5fe-4fb0-ad1d-598bd5308214',
-        name: 'Arrays',
+        name: 'Array data structure',
         link: 'https://en.wikipedia.org/wiki/Array_data_structure',
         questions: [],
         score: 0
-      }
+      },
+      question: 'What is index?'
     },
     {
       user: {
@@ -31,7 +35,8 @@ export class HelpSomeoneComponent implements OnInit {
         link: 'https://www.cplusplus.com/doc/tutorial/dynamic/',
         questions: [],
         score: 20
-      }
+      },
+      question: 'How does the executed program know where to look for the dynamically allocated variables in memory?'
     },
     {
       user: {
@@ -39,15 +44,23 @@ export class HelpSomeoneComponent implements OnInit {
       },
       material: {
         id: '95f0eb44-d1bc-4058-a9f2-35cfa1505611',
-        name: 'Functions',
-        link: 'https://www.cplusplus.com/doc/tutorial/functions/',
+        name: 'Understanding Move Semantics and Perfect Forwarding: Part 1',
+        link: 'https://drewcampbell92.medium.com/understanding-move-semantics-and-perfect-forwarding-987cf4dc7e27',
         questions: [],
         score: 30
-      }
+      },
+      question: 'I don\'t understand templates, help!'
     }
   ];
+  
+  private workspaces: Workspace[] = [];
+  private workspaces$: Subscription;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    this.workspaces$ = this.route.data.subscribe((data: Data) => {
+      this.workspaces = data.workspaces;
+    });
+  }
 
   ngOnInit(): void {
 

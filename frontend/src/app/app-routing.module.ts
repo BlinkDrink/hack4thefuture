@@ -30,8 +30,12 @@ const routes: Routes = [
         component: TopicComponent,
         resolve: { workspaces: WorkspaceListResolverService } // WorkspaceResolverService }
       },
+      {
+        path: 'help-someone',
+        component: HelpSomeoneComponent,
+        resolve: { workspaces: WorkspaceListResolverService } // WorkspaceResolverService }
+      },
       { path: 'track-progress', component: TrackProgressComponent },
-      { path: 'help-someone', component: HelpSomeoneComponent },
       { path: '**', redirectTo: '', pathMatch: 'full' },
       { path: 'workspaces/:id', component: MaterialDetailComponent }
     ]
